@@ -1,0 +1,1 @@
+Using withopen will allow us not to write close again and again
