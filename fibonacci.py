@@ -21,7 +21,17 @@ def fibotab(n):
         dp[i] = dp[i - 1] + dp[i - 2]
     return dp[n]
 
+def fiboptim(n):
+    if n <= 1:
+        return n
+    else:
+        a = 0; b = 1; t = 0
+        for i in range(2, n + 1):
+            t = a + b
+            a = b
+            b = t
+        return t
 
 n = int(input("Enter a number: "))
 dp = [-1] * (n + 1)
-print(f"The {n}th fibonacci numbers is: {fibotab(n)}")
+print(f"The {n}th fibonacci numbers is: {fiboptim(n)}")
